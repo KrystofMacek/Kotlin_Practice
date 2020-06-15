@@ -33,6 +33,18 @@ fun testAnnotations() {
     println(plantAnnotation)
 }
 
+// Labels - breaking outerLoop
+fun labels() {
+    outerLoop@ for (i in 1..100) {
+        for(j in 1..4) {
+            if(i>10) break@outerLoop
+            println(j)
+        }
+        println("outer $i ")
+    }
+}
+
 fun main() {
     testAnnotations()
+    labels()
 }
